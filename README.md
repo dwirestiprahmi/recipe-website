@@ -98,7 +98,7 @@ Run `docker compose up` on root directory
 2. Run `npm i` command
 3. Run `npm start`
 
-Run the Backend first and then run the frontend afterwards
+Run docker for database and then Backend first and then run the frontend afterwards
 
 ---
 
