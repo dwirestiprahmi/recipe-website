@@ -83,6 +83,9 @@ Dwiresti Puspita Rahmi (768553)
 
 ### Setup Backend and Frontend
 
+**Steps to run docker**
+Run `docker compose up` on root directory
+
 **Steps to run backend project:**
 
 1. Run cd `\packages\backend` command
