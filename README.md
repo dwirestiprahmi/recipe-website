@@ -65,7 +65,7 @@ Dwiresti Puspita Rahmi (768553)
 
 **Steps to run backend project:**
 
-1. Run cd \packages\backend
+1. Run cd `\packages\backend` command
 3. Run `npm i` command
 4. Run `npm run dev` command
 
@@ -208,6 +208,7 @@ Dwiresti Puspita Rahmi (768553)
         - Required:
             1. title
             2. ingredientName
+            
     5. Edits a specific ingredient in a specific recipe
         - Method in IngredientsInRecipe.ts
             updateIngredientInRecipe()
@@ -232,7 +233,9 @@ The testing for the backend can be found in directory test. For this test, a few
     1. RecipeController.test.ts
         - Create Recipe
             the recipe.json will be sent to create a recipe. expected is that the contain of the response the same as the one from the recipe.json file and that it gives 200 as a status code
-        - 
+        - Return Recipe with the given recipe title
+            the recipe.json will be compared with the response from the get route.
+        -
 
     2. IngredientController.test.ts
         

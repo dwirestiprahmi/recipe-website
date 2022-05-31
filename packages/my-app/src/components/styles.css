@@ -1,0 +1,342 @@
+
+label{
+    font-size: 1.5em;
+}
+
+p{
+    font-size: 1.0em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.search {
+    display: flex;
+    width: 30%;
+    position: relative;
+    align-items: center;
+    padding: 10px 0 10px 30px;
+}
+
+.search_box {
+    width: 100%;
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-size: 20px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+}
+
+.search_box:focus {
+    box-shadow: 0 0 10px 10000px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.search_submit {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    margin: 12px;
+    border-radius: 50px;
+    right: 0px;
+    border: none;
+    background-color: black;
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px grey;
+}
+
+.search_submit:hover {
+    background-color: rgb(41, 38, 38);
+}
+
+.search_submit:active {
+    transform: scale(0.8);
+    box-shadow: 0 0 5px black;
+}
+
+button{
+    width: fit-content;
+    background-color: white;
+    border-radius: 40px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color:dimgray ;
+}
+
+.button_recipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action_recipe{
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.remove_ingredient{
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.heading {
+    font-size: 30px;
+    padding-left: 20px;
+    margin: 20px 0;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    font-family: 'Dancing Script';
+}
+
+.editForm, .input_edit, .input_recipe, .input_ingredient {
+    position:relative;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Recipe Search Result */
+
+.recipe_result{
+    position: relative;
+    height: 80%;
+    padding: 20px 0px 20px 0px;
+    margin: 0 auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Dancing Script';
+    padding-top: 30px;
+}
+
+/* recipe details */
+
+.recipe_details, .r_ingredient_content{
+    position: relative;
+        height: 80%;
+        padding: 20px 0px 50px 0px;
+        margin: 0 auto;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 4fr 5fr;
+        gap: 50px;
+        font-family: 'Dancing Script';
+        padding-top: 30px;
+        background-color: rgb(255, 252, 249);
+        opacity: 0.9;
+}
+
+.r_ingredient_content h2{
+    padding: 10px 0px 20px 0px;
+    text-align: left;
+}
+
+.steps_content{
+    background-color: rgb(255, 252, 249);
+    padding: 20px;
+    opacity: 0.9;
+    text-align: left;
+}
+
+.recipe_info{
+    position: relative;
+    background-color: rgb(255, 252, 249);
+    opacity: 0.9;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.ingredient_section{
+    background-color: rgb(255, 252, 249);
+        padding: 20px;
+        opacity: 0.9;
+}
+
+.ingredients_inRecipe, .recipe_ingredients_inRecipe {
+    display: flex;
+    text-decoration: underline;
+}
+.number {
+    padding-right: 20px;
+}
+.i_unit {
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* .r_ingredient_content{
+    position: relative;
+    padding: 3rem 0;
+    display: grid;
+    gap: 2rem 5rem;
+} */
+
+/* .ingredients_inRecipe{
+    position: relative;
+    display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+        align-items: center;
+} */
+
+.recipe_picture, .recipe_ingredient_picture{
+    height: 300px;
+    border-radius:5px;
+}
+
+@media screen and (min-width: 992px) {
+    .recipe-details {
+        grid-template-columns: 4fr 5fr;
+        align-items: center;
+    }
+}
+
+/* div for create recipe page */
+.createRecipePage, .createIngredient{
+    position: relative;
+    border-radius: 5px;
+    background-color: black;
+    width: 700px;
+    padding: 12px 20px;
+    margin: 40px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.createIngredient{
+    width: 80%;
+
+}
+
+.page_title{
+    position: relative;
+    font-family: "Dancing Script";
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.label_recipeInput{
+    color: white;
+}
+
+.sub_title{
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+/* find by ingredient */
+
+.findBy_ingredient{
+    position: relative;
+    padding: 20px;
+    width: 460px;
+    display: inline-block;
+    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.findBy_ingredient input{
+    height: 50px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 40px;
+    font-size: 20px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+}
+
+.ingredient_submit {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    margin: 12px 30px;
+    border-radius: 10px;
+    right: 0px;
+    border: none;
+    background-color: black;
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px grey;
+}
+
+/* RecipeIngredientPage */
+
+.recipe_ingredient_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+        height: fit-content;
+        opacity: 0.9;
+        width: 700px;
+        background-color: #ccc;
+        background-color: rgb(255, 252, 249);
+    margin-bottom: 20px;
+}
+.recipe_ingredient_details h1{
+    text-align: left;
+    padding: 20px;
+}
+
+.recipe_ingredient_content{
+    text-align: left;
+    margin: 20px;
+}
+
+
+.recipe_ingredients_list{
+    position: relative;
+    height: 80%;
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Dancing Script';
+    padding-top: 30px;
+}
+
+.ingredient_details{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ingredients{
+    width: 400px;
+    background-color: rgb(255, 252, 249);
+    margin-top: 50px;
+}
+
+.ingredients img{
+    width: 400px;
+}
+
+.picture-header{
+    margin: 20px;
+}
+
+/* add ingredient to recipe */
+.button_recipe{
+    position: relative;
+}
+
