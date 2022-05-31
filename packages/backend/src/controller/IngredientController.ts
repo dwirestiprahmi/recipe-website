@@ -39,7 +39,7 @@ export class IngredientController{
         const ingredientToRemove = await this.ingredientRepository.findOne({where: {name: name}});
         if (!ingredientToRemove) throw new Error(`Ingredient with name ${name} cannot be deleted because it cannot be found!`);
         await this.ingredientRepository.remove(ingredientToRemove);
-        response.status(204).json( {
+        response.status(200).json( {
             message:  `${name} is deleted from Ingredient.`
         })
     }

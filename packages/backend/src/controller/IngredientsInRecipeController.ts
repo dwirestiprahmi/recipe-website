@@ -71,9 +71,9 @@ export class IngredientsInRecipeController{
                             .where("recipeTitle = :recipeTitle", {recipeTitle: title})
                             .andWhere("ingredientName = :ingredientName", {ingredientName: ingredientName})
                             .execute();
-        return {
+        return ({
             message: `ingredient ${ingredientName} is deleted from Recipe with title ${title}`
-        }
+        })
     }
 
     //UPDATE ingredientinrecipe by ingredientName and recipeTitle with route put /ingredientsInRecipe/:title/:ingredientName
@@ -96,6 +96,13 @@ export class IngredientsInRecipeController{
                     {recipeTitle: title, ingredientName: ingredientName})
         .execute();
 
-        return ingredientToUpdate;
+        const checkUpdate = this.ingredientsOnRecipeRepository.findOne({
+            where: {
+                recipeTitle: title,
+                ingredientName: ingredientName
+            }
+        })
+
+        return checkUpdate;
     }
 }

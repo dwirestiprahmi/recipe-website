@@ -5,6 +5,8 @@ import { RecipeController } from "./controller/recipeController"
 import { Ingredient } from "./entity/Ingredient"
 
 export const Routes = [{
+    /*****                  RECIPE ROUTE                 *****/  
+
     method: "get",
     route: "/",
     controller: RecipeController,
@@ -22,7 +24,7 @@ export const Routes = [{
     controller: RecipeController,
     action: "getOneRecipe",
     validation:[
-        param('title').isString(),
+        param('title').isString().withMessage('recipe title is required to find the specific recipe'),
     ]
 },{
     method: "get",
@@ -30,7 +32,7 @@ export const Routes = [{
     controller: RecipeController,
     action: "getRecipeDetails",
     validation:[
-        param('title').isString(),
+        param('title').isString().withMessage('recipe title is required to find the specific recipe with its details'),
     ]
 }, {
     method: "post",
@@ -40,8 +42,8 @@ export const Routes = [{
     validation:[
         body('title').isString().withMessage("can't be empty"),
         body('description').isString().withMessage("please fill the description"),
-        body('pictureLink').isString(),
-        body('steps').isString(),
+        body('pictureLink').isString().withMessage("please give a picture for the recipe"),
+        body('steps').isString().withMessage("please give instructions on how to cook it"),
     ],
 }, {
     method: "delete",
@@ -49,7 +51,7 @@ export const Routes = [{
     controller: RecipeController,
     action: "removeRecipe",
     validation:[
-        param('title').isString(),
+        param('title').isString().withMessage("recipe title is required to delete a recipe"),
     ]
 }, {
     method: "put",
@@ -57,9 +59,13 @@ export const Routes = [{
     controller: RecipeController,
     action: "updateRecipe",
     validation: [
-        param('title').isString(),
+        param('title').isString().withMessage("recipe title is required to edit a recipe"),
     ],
-},{
+},
+
+/*****                  INGREDIENT ROUTE                 *****/
+
+{
     method: "get",
     route: "/api/ingredient",
     controller: IngredientController,
@@ -71,7 +77,7 @@ export const Routes = [{
     controller: IngredientController,
     action: "getOneIngredient",
     validation: [
-        param('name')
+        param('name').isString().withMessage('ingredient Name is required to find the specific ingredient')
     ],
 }, {
     method: "post",
@@ -79,9 +85,9 @@ export const Routes = [{
     controller: IngredientController,
     action: "saveIngredient",
     validation: [
-        body('name').isString(),
-        body('description').isString(),
-        body('pictureLink').isString(),
+        body('name').isString().withMessage("ingredient Name is required to create a new ingredient"),
+        body('description').isString().withMessage("please give a desription to the ingredient"),
+        body('pictureLink').isString().withMessage("please input picture for the ingredient"),
     ],
 }, {
     method: "delete",
@@ -89,7 +95,7 @@ export const Routes = [{
     controller: IngredientController,
     action: "removeIngredient",
     validation: [
-        param('name').isString(),
+        param('name').isString().withMessage('ingredient Name is required to delete the specific ingredient'),
     ],
 }, {
     method: "put",
@@ -97,9 +103,14 @@ export const Routes = [{
     controller: IngredientController,
     action: "updateIngredient",
     validation: [
-        param('name').isString(),
+        param('name').isString().withMessage('ingredient Name is required to edit the specific ingredient'),
     ],
-},{
+}
+
+
+/*****                  INGREDIENT IN RECIPE ROUTE                 *****/
+
+,{
     method: "get",
     route: "/api/ingredientsInRecipe",
     controller: IngredientsInRecipeController,
@@ -110,26 +121,36 @@ export const Routes = [{
     route: "/api/ingredientsInRecipe/:ingredientName",
     controller: IngredientsInRecipeController,
     action: "getRecipeByIngredientName",
-    validation: [],
+    validation: [
+        param("ingredientName").isString().withMessage("ingredient name is required to get a recipe by ingredientName")
+    ],
 }, {
     method: "post",
     route: "/api/ingredientsInRecipe",
     controller: IngredientsInRecipeController,
     action: "saveIngredientInRecipe",
-    validation: [],
+    validation: [
+        body('ingredientName').isString().withMessage("ingredient name is required to add an ingredient in a recipe"),
+        body('recipeTitle').isString().withMessage("recipe title is required to add an ingredient in a recipe"),
+        body('amount').isNumeric().withMessage("amount should be in numeric"),
+        body('unit').isString().withMessage("unit should be in string"),
+    ],
 }, {
     method: "delete",
     route: "/api/ingredientsinrecipe/:title/:ingredientName",
     controller: IngredientsInRecipeController,
     action: "removeIngredientFromRecipe",
     validation:[
-        param('title').isString(),
-        param('ingredientName').isString(),
+        param('title').isString().withMessage("recipe title is required to delete an ingredient in a specific recipe"),
+        param('ingredientName').isString().withMessage("ingredient Name is required to delete an ingredient in a specific recipe"),
     ]
 },{
     method: "put",
     route: "/api/ingredientsInRecipe/:title/:ingredientName",
     controller: IngredientsInRecipeController,
     action: "updateIngredientInRecipe",
-    validation: [],
+    validation: [
+        param('title').isString().withMessage("recipe title is required to edit an ingredient in a recipe"),
+        param('ingredientName').isString().withMessage("ingredient Name is required to edit an ingredient in a recipe"),
+    ],
 },]

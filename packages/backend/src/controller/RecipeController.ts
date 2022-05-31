@@ -63,7 +63,7 @@ export class RecipeController {
     if (!recipeToRemove) throw new Error(`Recipe with title ${title} cannot be found.`)
     else{
       await this.recipeRepository.remove(recipeToRemove);
-      response.status(204).json({message: `Recipe with title ${title} has been deleted.`});
+      return {message: `Recipe with title ${title} has been deleted.`};
     }
   }
 

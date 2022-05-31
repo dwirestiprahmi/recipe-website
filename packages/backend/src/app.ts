@@ -7,7 +7,7 @@ import morgan from "morgan"
 import { validationResult } from "express-validator";
 import cors from 'cors'
 function handleError(err, req, res, next){
-    res.status(err.statusCode || 404).send({message: err.message});
+    res.status(err.statusCode || 400).send({message: err.message});
 }
 
 // create express app
