@@ -47,7 +47,7 @@ describe("Restful Recipe API tests for RecipeController", function(){
             }
             done();
             });
-            
+     
     });
 
     it("should update the recipe of the provided recipe title using PUT request", function(done){
@@ -107,8 +107,5 @@ describe("Restful Recipe API tests for RecipeController", function(){
         .set('Accept', 'application/json')
         .expect(400, done);
     });
-
-
-
 })
 

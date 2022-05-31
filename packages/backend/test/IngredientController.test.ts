@@ -88,29 +88,4 @@ describe("Restful Ingredient API tests for IngredientController", function(){
             done();
         })
     })
-
-    // it("should NOT successfully create a recipe", function(done){
-    //     request(baseURL)
-    //     .post('/api/recipe/create')
-    //     .send(recipe)
-    //     .set('Accept', 'application/json')
-    //     .expect(function(res){
-    //         console.log(res)
-    //         res.body.title = recipe.title;
-    //         res.body.description = recipe.description;
-    //         res.body.pictureLink = recipe.pictureLink;
-    //         res.body.steps = recipe.steps;
-    //         res.body.rating = recipe.rating;
-    //         recipeTitle = res.body.title
-    //     })
-
-    //     .expect(200, {
-    //         "title": "Gulai Ayam (Padang-Style Chicken Curry)",
-    //         "description": "Gulai Ayam is chicken with thick, red and spicy sauce. This dish originaly comes from Padang, West Sumatra, Indonesia. It is usually served with rice.", 
-    //         "pictureLink": "https://img-global.cpcdn.com/recipes/2feda6847f8659f7/640x640sq70/photo.webp",
-    //         "steps": "1. Marinate chicken with lime juice for 10 minutes. Blend garlic, shallot, candlenut, ginger, turmeric, cayenne pepper, cumin, coriander and 1 Tbsp water with food processor...",
-    //         "rating": 5
-    //     }, done);
-    // });
-
 })
