@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import InputField from './trash/InputField';
 import Nav from './components/Nav';
 import RecipePage from './components/RecipePage';
 import SearchBar from './components/SearchBarPage';
-import CreateRecipe from './trash/CreateRecipe';
 import FindByIngredient from './components/FindByIngredient';
 import SearchBarPage from './components/SearchBarPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -25,7 +23,6 @@ const App: React.FC = () => {
                     <Route path="/api/recipe" exact component={RecipePage} />
                     <Route path="/api/ingredient/:ingredientName" exact component={IngredientDetails} />
                     <Route path="/api/recipe/create/" component={CreateNewRecipe}/>
-                    <Route path="/api/recipe/create/ingredient/:title" component={CreateRecipe} />
                     <Route path="/api/recipe/details/:title" component={RecipeDetails} />
                     <Route path="/api/recipe/ingredient" exact component={FindByIngredient} />
                     <Route path="/api/recipe/search/ingredient/:ingredientName" component={RecipeIngredientPage} />
