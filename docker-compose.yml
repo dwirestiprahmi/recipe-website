@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+
+  db:
+    image: postgres:10.16
+    restart: always
+    environment:
+      POSTGRES_USER: recipeUser
+      POSTGRES_PASSWORD: fweSS22
+      POSTGRES_DB: recipeDB
+    ports:
+      - 5433:5433
+    volumes:
+      #save work in this db directory
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
+    driver: local
