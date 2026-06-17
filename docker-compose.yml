@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: fweSS22
       POSTGRES_DB: recipeDB
     ports:
-      - 5433:5433
+      - 5432:5432
     volumes:
       #save work in this db directory
       - db-data:/var/lib/postgresql/data
